@@ -35,14 +35,26 @@ public class FlyCommand implements CommandExecutor, Listener {
 
             else if(args.length==1) {
                 if(args[0].equalsIgnoreCase("reload")) {
-                    plugin.reloadConfig();
-                    player.sendMessage(prefix+FlyPlugin.Colors(plugin.getConfig().getString("reload-msg")));
+
+                    if(player.hasPermission("flyplugin.reload")) {
+                        plugin.reloadConfig();
+                        player.sendMessage(prefix+FlyPlugin.Colors(plugin.getConfig().getString("reload-msg")));
+                    }
+                    else
+                        player.sendMessage(prefix+FlyPlugin.Colors(plugin.getConfig().getString("player-no-permission-msg")));
+
                 }
                 else if(args[0].equalsIgnoreCase("help")) {
-                    player.sendMessage(FlyPlugin.Colors("&8-----&aFly Plugin&8-----"));
-                    player.sendMessage(FlyPlugin.Colors("&8------------------------"));
-                    player.sendMessage(FlyPlugin.Colors("&6/fly &8- &cToggles fly for player"));
-                    player.sendMessage(FlyPlugin.Colors("&6/fly <player> &8- &cToggles fly for the given player"));
+
+                    if(player.hasPermission("flyplugin.help")) {
+                        player.sendMessage(FlyPlugin.Colors("&8----------&aFly Plugin&8----------"));
+                        player.sendMessage(FlyPlugin.Colors("&8------------------------"));
+                        if(player.hasPermission("flyplugin.fly")) player.sendMessage(FlyPlugin.Colors("&6/fly &8- &cToggles fly for player"));
+                        if(player.hasPermission("flyplugin.fly.others")) player.sendMessage(FlyPlugin.Colors("&6/fly <player> &8- &cToggles fly for the given player"));
+                    }
+                    else
+                        player.sendMessage(prefix+FlyPlugin.Colors(plugin.getConfig().getString("player-no-permission-msg")));
+
                 }
 
                 else if(player.hasPermission("flyplugin.fly.others")) {
