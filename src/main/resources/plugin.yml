@@ -1,0 +1,10 @@
+name: FlyPlugin
+version: ${project.version}
+main: me.mystichqra.flyplugin.FlyPlugin
+api-version: 1.13
+authors: [MysticHqra]
+description: A plugin to toggle fly and other features
+commands:
+  fly:
+    description: Basic command to fly! Only for non idiotas
+    aliases: []
