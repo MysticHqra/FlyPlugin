@@ -3,15 +3,32 @@
 #If you would like any features, message me privately
 #A 5 star rating would be appreciated :)
 
-prefix: '&8[&6Fly Plugin&8] ' #Prefix used by the plugin
-enable-join-fly: true #Enables fly if the player is floating
+#Prefix used by the plugin
+prefix: '&8[&6Fly Plugin&8] '
 
+#Enables fly if the player is floating
+enable-join-fly: true
 
-reload-msg: '&aSuccessfully reloaded the plugin!' #Message sent to the player when the plugin config is reloaded
-console-error-message: 'Only players can execute the command!' #Message sent if the console tries to execute the command
-player-no-permission-msg: '&cYou don''t have permission to execute the command!' #Message sent if the player does not have the permission flyplugin.fly
-fly-on-message: '&aYou have successfully enabled fly!' #Message sent if the player turns on fly mode
-fly-off-message: '&cYou have successfully disabled fly!' #Message sent if the player turns off fly mode
+#Message sent to the player when the plugin config is reloaded
+reload-msg: '&aSuccessfully reloaded the plugin!'
+
+#Message sent if the console tries to execute the command
+console-error-message: 'Only players can execute the command!'
+
+#Message sent if the player does not have the permission
+player-no-permission-msg: '&cYou don''t have permission to execute the command!'
+
+#Message sent if the player turns on fly mode
+fly-on-message: '&aYou have successfully enabled fly!'
+
+#Message sent if the player turns off fly mode
+fly-off-message: '&cYou have successfully disabled fly!'
+
+#Enables fly on join for players with permission flyplugin.joinfly
 joinfly-message: '&2You were set to fly mode on join!'
-incorrect-format-msg: '&cIncorrect Format! Usage: /fly <player>' #Message sent if the command is wrongly executed
-invalid-player-msg: '&cNo such player exists!' #Message sent if the target player does not exist
+
+#Message sent if the command is wrongly executed
+incorrect-format-msg: '&cIncorrect Format! Usage: /fly <player>'
+
+#Message sent if the target player does not exist
+invalid-player-msg: '&cNo such player exists!'

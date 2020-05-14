@@ -8,7 +8,6 @@ import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,7 +20,7 @@ public class FlyCommand implements CommandExecutor, Listener {
 
     Plugin plugin = FlyPlugin.getPlugin(FlyPlugin.class);
     String prefix = FlyPlugin.Colors(plugin.getConfig().getString("prefix")+"&r");
-    ArrayList<String> flyingplayers = new ArrayList<>();
+    static ArrayList<String> flyingplayers = new ArrayList<>();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
